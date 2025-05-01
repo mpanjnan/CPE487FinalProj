@@ -12,6 +12,7 @@ ENTITY wail IS
 		wspeed : IN UNSIGNED (7 DOWNTO 0); -- speed of wail in pitch units/wclk
 		wclk : IN STD_LOGIC; -- wailing clock (47.6 Hz)
 		kval : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+		sw : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 		audio_clk : IN STD_LOGIC; -- audio sampling clock (48.8 kHz)
 	audio_data : OUT SIGNED (15 DOWNTO 0)); -- output audio sequence (wailing tone)
 END wail;
@@ -25,6 +26,7 @@ ARCHITECTURE Behavioral OF wail IS
 		);
 	END COMPONENT;
 	SIGNAL curr_pitch : UNSIGNED (13 DOWNTO 0); -- current wailing pitch
+	SIGNAL mult : INTEGER := 1;
 BEGIN
 	-- this process modulates the current pitch. It keep a variable updn to indicate
 	-- whether tone is currently rising or falling. Each wclk period it increments
@@ -35,30 +37,41 @@ BEGIN
 	BEGIN
 		WAIT UNTIL rising_edge(wclk);
 		
+		IF sw = "00" THEN
+		  mult <= 1;
+		ELSIF sw = "01" THEN
+		  mult <= 2;
+	    ELSIF sw = "10" THEN
+	      mult <= 4;
+	    ELSE
+	      mult <= 8;
+	    END IF;
+		
+		
 		IF kval = X"1" THEN
-		  curr_pitch <= to_unsigned (295, 14);
+		  curr_pitch <= to_unsigned (148*mult, 14);
 		ELSIF kval = X"2" THEN
-		  curr_pitch <= to_unsigned (313, 14);
+		  curr_pitch <= to_unsigned (156*mult, 14);
 	    ELSIF kval = X"3" THEN
-		  curr_pitch <= to_unsigned (332, 14);
+		  curr_pitch <= to_unsigned (166*mult, 14);
 		ELSIF kval = X"4" THEN
-		  curr_pitch <= to_unsigned (351, 14);
+		  curr_pitch <= to_unsigned (176*mult, 14);
 	    ELSIF kval = X"5" THEN
-		  curr_pitch <= to_unsigned (372, 14);
+		  curr_pitch <= to_unsigned (186*mult, 14);
 		ELSIF kval = X"6" THEN
-		  curr_pitch <= to_unsigned (394, 14);
+		  curr_pitch <= to_unsigned (197*mult, 14);
 		ELSIF kval = X"7" THEN
-		  curr_pitch <= to_unsigned (418, 14);
+		  curr_pitch <= to_unsigned (209*mult, 14);
 		ELSIF kval = X"8" THEN
-		  curr_pitch <= to_unsigned (443, 14);
+		  curr_pitch <= to_unsigned (221*mult, 14);
 		ELSIF kval = X"9" THEN
-		  curr_pitch <= to_unsigned (469, 14);
+		  curr_pitch <= to_unsigned (234*mult, 14);
 		ELSIF kval = X"A" THEN
-		  curr_pitch <= to_unsigned (497, 14);
+		  curr_pitch <= to_unsigned (248*mult, 14);
 		ELSIF kval = X"B" THEN
-		  curr_pitch <= to_unsigned (526, 14);
+		  curr_pitch <= to_unsigned (263*mult, 14);
 		ELSIF kval = X"C" THEN
-		  curr_pitch <= to_unsigned (557, 14);
+		  curr_pitch <= to_unsigned (279*mult, 14);
 		ELSE
 		  curr_pitch <= to_unsigned (0, 14);
 		END IF;
