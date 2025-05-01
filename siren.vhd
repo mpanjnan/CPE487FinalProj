@@ -12,7 +12,9 @@ ENTITY siren IS
 		KBR_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1);
 		KBR_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1);
 		KBL_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1);
-		KBL_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1)
+		KBL_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1);
+		SWL : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		SWR : IN STD_LOGIC_VECTOR (1 DOWNTO 0)
 	);
 END siren;
 
@@ -49,7 +51,8 @@ ARCHITECTURE Behavioral OF siren IS
 			wclk : IN STD_LOGIC;
 			kval : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
 			audio_clk : IN STD_LOGIC;
-			audio_data : OUT SIGNED (15 DOWNTO 0)
+			audio_data : OUT SIGNED (15 DOWNTO 0);
+			sw : IN STD_LOGIC_VECTOR (1 DOWNTO 0)
 		);
 	END COMPONENT;
 	SIGNAL tcount : unsigned (19 DOWNTO 0) := (OTHERS => '0'); -- timing counter
@@ -116,6 +119,7 @@ BEGIN
 			wspeed => wail_speed, 
 			wclk => slo_clk,
 			kval => kpr_value, 
+			sw => SWR,
 			audio_clk => audio_clk, 
 			audio_data => data_R
 		);
@@ -126,6 +130,7 @@ BEGIN
 			wspeed => wail_speed, 
 			wclk => slo_clk,
 			kval => kpl_value, 
+			sw => SWL,
 			audio_clk => audio_clk, 
 			audio_data => data_L
 		);
