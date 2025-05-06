@@ -14,6 +14,8 @@ The goal of this project is to create 2 keyboards that each play on one audio ch
   * Connected to port JA (top 6 pins)
   * 3.5-mm connector for a headphone/speaker needed
 
+Within this project, the keypads and switches act as inputs, and the DAC with the speaker are the outputs of our program. To successfully use these components, we modified the constraints, which are explained in the modifications section.
+
 ![DAC](https://github.com/user-attachments/assets/40b7c4a6-6775-4444-b22a-5bbd9f70b56c)
 ![Keypad](https://github.com/user-attachments/assets/9c268b46-4acd-4965-a26a-4d5097c4a7d4)
 
