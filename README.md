@@ -49,11 +49,9 @@ The tone module from lab 5 generates a signed triangular wave (a tone) at a samp
 
 The siren module is from lab 5, and in this project, it acts as our testbench. Within this code, it initializes all of our entities and runs the main clock process to ensure all components are synchronized and can pass information to one another. 
 
-## Description of inputs from and outputs to the Nexys board from the Vivado project (10 points of the Submission category)
 
-## Images and/or videos of the project in action interspersed throughout to provide context (10 points of the Submission category)
+## Modifications
 
-## “Modifications” (15 points of the Submission category)
 
-## Conclude with a summary of the process itself – who was responsible for what components (preferably also shown by each person contributing to the github repository!), the timeline of work completed, any difficulties encountered and how they were solved, etc. (10 points of the Submission category)
+## Conclusions
 
