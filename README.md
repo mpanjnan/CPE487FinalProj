@@ -10,8 +10,12 @@ The goal of this project is to create 2 keyboards that each play on one audio ch
 * Nexys A7-100T Board
 * 2 16-button keypad modules
   * Connected to ports JB & JC
-* 24-bit digital-to-analog converter (DAC)
-  * Connected to port JA
+* 24-bit digital-to-analog converter (DAC): Pmod I2S
+  * Connected to port JA (top 6 pins)
+  * 3.5-mm connector for a headphone/speaker needed
+
+![DAC](https://github.com/user-attachments/assets/40b7c4a6-6775-4444-b22a-5bbd9f70b56c)
+![Keypad](https://github.com/user-attachments/assets/9c268b46-4acd-4965-a26a-4d5097c4a7d4)
 
 
 ## A description of the expected behavior of the project, attachments needed (speaker module, VGA connector, etc.), related images/diagrams, etc. (10 points of the Submission category)
@@ -19,6 +23,8 @@ The goal of this project is to create 2 keyboards that each play on one audio ch
 
 
 ## A summary of the steps to get the project to work in Vivado and on the Nexys board (5 points of the Submission category)
+
+
 
 ## Description of inputs from and outputs to the Nexys board from the Vivado project (10 points of the Submission category)
 
