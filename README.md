@@ -4,10 +4,12 @@
 
 ## Introduction
 
-The goal of this project is to create 2 keyboards that each play on one audio channel, allowing users to battle it out on 
+The goal of this project is to create 2 keyboards that each play on one audio channel, allowing users to battle it out on these piano keyboards.
 
 
 ## A description of the expected behavior of the project, attachments needed (speaker module, VGA connector, etc.), related images/diagrams, etc. (10 points of the Submission category)
+
+
 
 ## A summary of the steps to get the project to work in Vivado and on the Nexys board (5 points of the Submission category)
 
