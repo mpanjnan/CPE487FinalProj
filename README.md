@@ -6,7 +6,7 @@
 
 The goal of this project is to create 2 keyboards that each play on one audio channel, allowing users to battle it out on these piano keyboards. In addition to the keyboards, users can also change their octaves as well, allowing them to have more freedom over the songs played.
 
-Components:
+**Components:**
 * Nexys A7-100T Board
 * 2 16-button keypad modules
   * Connected to ports JB & JC
