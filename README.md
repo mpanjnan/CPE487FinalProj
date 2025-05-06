@@ -4,7 +4,14 @@
 
 ## Introduction
 
-The goal of this project is to create 2 keyboards that each play on one audio channel, allowing users to battle it out on these piano keyboards.
+The goal of this project is to create 2 keyboards that each play on one audio channel, allowing users to battle it out on these piano keyboards. In addition to the keyboards, users can also change their octaves as well, allowing them to have more freedom over the songs played.
+
+Components:
+* Nexys A7-100T Board
+* 2 16-button keypad modules
+  * Connected to ports JB & JC
+* 24-bit digital-to-analog converter (DAC)
+  * Connected to port JA
 
 
 ## A description of the expected behavior of the project, attachments needed (speaker module, VGA connector, etc.), related images/diagrams, etc. (10 points of the Submission category)
