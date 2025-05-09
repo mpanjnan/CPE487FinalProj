@@ -70,12 +70,11 @@ The modifications made to siren aimed to add functionality to the newly added ex
 The wail module was modified in our code to map the keypad value being read to a specific pitch in the western musical scale, and pass that along to the tone module to be created into a signal to be output. 
 * Modify the entity to receive keypad and switch values
 * Create a new signal “mult,” which will be used to multiply the frequency in order to change octaves (one octave = 2x previous octave frequency)
-
-![](MusicFreq.png)
-
 * Change “mult” based on switch value (mult = 2^sw, 0 <= sw <= 3)
 * Change the value of curr_pitch based on whatever keypad value is received 
  * The notes match the western chromatic scale starting on A2
+
+![](MusicFreq.png)
 
 
 ## Conclusions
